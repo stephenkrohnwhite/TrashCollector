@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -51,10 +52,15 @@ namespace TrashCollector.Controllers
         public ActionResult Create([Bind(Include = "CustomerID,UserName,FirstName,LastName,Phone,Email,Password,PickUpDay,ExtraPickUp,AccountBalance,UserAddressKey")] Customer customer)
         {
             if (ModelState.IsValid)
-            {
+            {;
+                var currentUserId = User.Identity.GetUserId();
                 
                 db.Customers.Add(customer);
                 db.SaveChanges();
+                customer.UserID = currentUserId;
+                db.SaveChanges();
+
+                
                 return RedirectToAction("Index");
             }
 
