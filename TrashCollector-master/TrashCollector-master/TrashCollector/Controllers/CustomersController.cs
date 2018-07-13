@@ -52,6 +52,7 @@ namespace TrashCollector.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
