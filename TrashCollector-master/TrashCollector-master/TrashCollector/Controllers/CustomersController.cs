@@ -49,18 +49,19 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,UserName,FirstName,LastName,Phone,Email,Password,PickUpDay,ExtraPickUp,AccountBalance,UserAddressKey")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,UserName,FirstName,LastName,Phone,Email,Password,PickUpDay,ExtraPickUp,AccountBalance, Address, UserAddressKey")] Customer customer)
         {
             if (ModelState.IsValid)
-            {;
+            {
                 var currentUserId = User.Identity.GetUserId();
-                
+                db.UserAddresses.Add(customer.Address);
+                db.SaveChanges();
+                var tableAddress = db.UserAddresses.Where(c => c.AddressLine == customer.Address.AddressLine).First();
+                customer.UserAddressKey = tableAddress.UserAddressID;
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 customer.UserID = currentUserId;
                 db.SaveChanges();
-
-                
                 return RedirectToAction("Index");
             }
 

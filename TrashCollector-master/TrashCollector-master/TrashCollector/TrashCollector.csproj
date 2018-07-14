@@ -214,9 +214,18 @@
     <Compile Include="Migrations\201807130103502_edited customer model.Designer.cs">
       <DependentUpon>201807130103502_edited customer model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807141400189_Changing Display for pickupdate.cs" />
+    <Compile Include="Migrations\201807141400189_Changing Display for pickupdate.Designer.cs">
+      <DependentUpon>201807141400189_Changing Display for pickupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807141505321_added to useraddress generation methods to view and customercontroller.cs" />
+    <Compile Include="Migrations\201807141505321_added to useraddress generation methods to view and customercontroller.Designer.cs">
+      <DependentUpon>201807141505321_added to useraddress generation methods to view and customercontroller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerAddress.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -325,6 +334,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807130103502_edited customer model.resx">
       <DependentUpon>201807130103502_edited customer model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807141400189_Changing Display for pickupdate.resx">
+      <DependentUpon>201807141400189_Changing Display for pickupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807141505321_added to useraddress generation methods to view and customercontroller.resx">
+      <DependentUpon>201807141505321_added to useraddress generation methods to view and customercontroller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

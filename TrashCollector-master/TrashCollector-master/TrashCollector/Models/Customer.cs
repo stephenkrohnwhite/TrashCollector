@@ -7,7 +7,7 @@ using System.Web;
 
 namespace TrashCollector.Models
 {
-    public class Customer 
+    public class Customer
     {
         [Key]
         public int CustomerID { get; set; }
@@ -17,10 +17,12 @@ namespace TrashCollector.Models
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        
-        
+
+
         [Display(Name = "Scheduled Pick Up Day")]
-        public DateTime PickUpDay { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime? PickUpDay { get; set; }
+        [DataType(DataType.Date)]
         [Display(Name = "Extra Pick Up")]
         public DateTime? ExtraPickUp { get; set; }
         [Display(Name = "Account Balance")]
