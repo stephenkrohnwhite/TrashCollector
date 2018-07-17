@@ -18,13 +18,14 @@ namespace TrashCollector.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-
+        [ForeignKey("PickUpDay")]
         [Display(Name = "Scheduled Pick Up Day")]
-        [DataType(DataType.Date)]
-        public DateTime? PickUpDay { get; set; }
-        [DataType(DataType.Date)]
-        [Display(Name = "Extra Pick Up")]
-        public DateTime? ExtraPickUp { get; set; }
+        public int DayID { get; set; }
+        public Days PickUpDay { get; set; }
+        public int? ExtraDayID;
+        public Days ExtraPickUpDay { get; set; }
+
+
         [Display(Name = "Account Balance")]
         public Double? AccountBalance{ get; set; }
 
@@ -35,5 +36,6 @@ namespace TrashCollector.Models
 
         public IEnumerable<UserAddress> UserAddresses { get; set; }
         public string UserID { get; set; }
+        public IEnumerable<Days> DaysOfWeek { get; set; }
     }
 }

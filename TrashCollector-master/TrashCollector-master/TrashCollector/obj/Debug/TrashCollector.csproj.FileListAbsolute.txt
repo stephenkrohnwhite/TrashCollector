@@ -245,6 +245,14 @@ C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\Tra
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.csproj.CopyComplete
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addinguserroles.resources
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.editedcustomermodel.resources
-C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.csprojResolveAssemblyReference.cache
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.ChangingDisplayforpickupdate.resources
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addedtouseraddressgenerationmethodstoviewandcustomercontroller.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.testingusingdayofweekasproperty.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addeddaymodel.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addingdaymodeltodatabase.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addedenumerabledaysofweekpropertyincustomerclass.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.test.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.tryingtoaltercolumns.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addingextrapickupday.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.csprojResolveAssemblyReference.cache
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addedextrapickupdayobject.resources

@@ -41,6 +41,7 @@ namespace TrashCollector.Controllers
         public ActionResult Create()
         {
             ViewBag.UserAddressKey = new SelectList(db.UserAddresses, "UserAddressID", "AddressLine");
+            //ViewBag.DayID = new SelectList(db.Days, "DayID", "Day");
             return View();
         }
 
