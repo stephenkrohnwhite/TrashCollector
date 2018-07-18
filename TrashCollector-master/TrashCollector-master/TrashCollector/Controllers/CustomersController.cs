@@ -73,11 +73,33 @@ namespace TrashCollector.Controllers
                 db.SaveChanges();
                 customer.UserID = currentUserId;
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
             ViewBag.UserAddressKey = new SelectList(db.UserAddresses, "UserAddressID", "AddressLine", customer.UserAddressKey);
             return View(customer);
+        }
+
+        private List<DateTime?> MapPickUpList(Days pickUpDay, DateTime? extraPickUp)
+        {
+            DateTime dt = DateTime.Now;
+            DateTime end = DateTime.Now.AddDays(21);
+            List<DateTime?> mappedDates = new List<DateTime?>();
+            List<DateTime> nextThreeWeeks = DateTimeHandler.GetDatesBetween(dt, end);
+            for(int i = 0; i < nextThreeWeeks.Count; i++)
+            {
+                if(nextThreeWeeks[i].DayOfWeek.ToString() == pickUpDay.Day)
+                {
+                    mappedDates.Add(nextThreeWeeks[i]);
+                }
+            }
+            if(extraPickUp != null)
+            {
+                mappedDates.Add(extraPickUp);
+            }
+            return mappedDates;
+            
         }
 
         // GET: Customers/Edit/5

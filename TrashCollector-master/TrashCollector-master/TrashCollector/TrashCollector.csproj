@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201807180021279_changing datetime display.Designer.cs">
       <DependentUpon>201807180021279_changing datetime display.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807180152206_edited employee model.cs" />
+    <Compile Include="Migrations\201807180152206_edited employee model.Designer.cs">
+      <DependentUpon>201807180152206_edited employee model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -343,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807180021279_changing datetime display.resx">
       <DependentUpon>201807180021279_changing datetime display.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180152206_edited employee model.resx">
+      <DependentUpon>201807180152206_edited employee model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

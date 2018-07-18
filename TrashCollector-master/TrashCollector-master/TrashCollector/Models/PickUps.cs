@@ -11,6 +11,6 @@ namespace TrashCollector.Models
         [Key]
         public int PickUpID { get; set; }
         public UserAddress PickUpAddress { get; set; }
-        public DateTime PickUpTime { get; set; }
+        public IEnumerable<DateTime> PickUpTime { get; set; }
     }
 }
