@@ -22,9 +22,12 @@ namespace TrashCollector.Models
         [Display(Name = "Scheduled Pick Up Day")]
         public int DayID { get; set; }
         public Days PickUpDay { get; set; }
-        public int? ExtraDayID;
-        public Days ExtraPickUpDay { get; set; }
-
+        [Display(Name = "One time extra pick up")]
+        [DataType(DataType.Date)]
+        public DateTime? ExtraPickUp
+        {
+            get;set;
+        }
 
         [Display(Name = "Account Balance")]
         public Double? AccountBalance{ get; set; }

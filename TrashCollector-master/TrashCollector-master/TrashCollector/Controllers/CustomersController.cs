@@ -40,9 +40,13 @@ namespace TrashCollector.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            ViewBag.UserAddressKey = new SelectList(db.UserAddresses, "UserAddressID", "AddressLine");
+            var days = db.Days.ToList();
+            Customer customer = new Customer()
+            {
+                DaysOfWeek = days
+        };
             //ViewBag.DayID = new SelectList(db.Days, "DayID", "Day");
-            return View();
+            return View(customer);
         }
 
         // POST: Customers/Create
@@ -50,7 +54,7 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,UserName,FirstName,LastName,Phone,Email,Password,PickUpDay,ExtraPickUp,AccountBalance, Address, UserAddressKey")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,UserName,FirstName,LastName,Phone,Email,Password,PickUpDay,ExtraPickUp,AccountBalance, Address, UserAddressKey, DayID, ExtraPickUp")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +63,12 @@ namespace TrashCollector.Controllers
                 db.SaveChanges();
                 var tableAddress = db.UserAddresses.Where(c => c.AddressLine == customer.Address.AddressLine).First();
                 customer.UserAddressKey = tableAddress.UserAddressID;
+                var customerDayJunction = db.Days.Where(c => c.DayID == customer.DayID).First();
+                customer.PickUpDay = customerDayJunction;
+                //if (customer.ExtraDayID != null)
+                //{
+                //    customerDayJunction = db.Days.Where(c => c.DayID == customer.ExtraDayID).First();
+                //}
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 customer.UserID = currentUserId;
