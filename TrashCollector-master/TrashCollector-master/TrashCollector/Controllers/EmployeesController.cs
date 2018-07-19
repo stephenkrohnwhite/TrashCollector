@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -23,6 +24,8 @@ namespace TrashCollector.Controllers
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
+
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -32,7 +35,20 @@ namespace TrashCollector.Controllers
             {
                 return HttpNotFound();
             }
+            var pickUps = GetTodaysPickups(employee);
+            employee.PickUps = pickUps;
             return View(employee);
+        }
+
+        private IQueryable<Customer> GetTodaysPickups(Employee employee)
+        {
+            DateTime dt = DateTime.Now;
+            var customerJunction = db.Customers.Where(c => c.Address.ZipCode == employee.Zipcode);
+            var pickUps = customerJunction.Where(c => c.ExtraPickUp.Value.DayOfYear == dt.DayOfYear).Where(
+                c => c.PickUpDay.Day == dt.DayOfWeek.ToString());
+
+            
+            return pickUps;
         }
 
         // GET: Employees/Create
@@ -46,10 +62,12 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeID,FirstName,LastName,Password")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeID,FirstName,LastName,Zipcode")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                var currentUserId = User.Identity.GetUserId();
+                employee.UserID = currentUserId;
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +96,7 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeID,FirstName,LastName,Password")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeID,FirstName,LastName,Zipcode")] Employee employee)
         {
             if (ModelState.IsValid)
             {

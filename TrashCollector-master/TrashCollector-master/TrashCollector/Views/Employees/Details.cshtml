@@ -1,11 +1,5 @@
 ﻿@model TrashCollector.Models.Employee
 
-@{
-    ViewBag.Title = "Details";
-}
-
-<h2>Details</h2>
-
 <div>
     <h4>Employee</h4>
     <hr />
@@ -27,13 +21,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.Zipcode)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Password)
+            @Html.DisplayFor(model => model.Zipcode)
         </dd>
-
+        <dt>
+            @foreach (var item in Model.PickUps)
+             {
+                  @Html.DisplayFor(x => item.Address, "AddressLine", "ZipCode")
+              }
+        </dt>
+        <dd>
+            @foreach (var item in Model.PickUps)
+             {
+                 @Html.DisplayFor(x => item.Address, "AddressLine", "ZipCode")
+            }
+        </dd>
     </dl>
 </div>
 <p>

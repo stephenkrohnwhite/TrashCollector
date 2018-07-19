@@ -248,3 +248,8 @@ C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\Tra
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.changingextrapickuptodatetime.resources
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.changingdatetimedisplay.resources
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.editedemployeemodel.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addinguseraddressienumerableemployeeproperty.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.changedemployeepickupstoiqueryablecustomers.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.changedemployeepickupstoiqueryable.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.linkingemployeetorolestable.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.test.resources

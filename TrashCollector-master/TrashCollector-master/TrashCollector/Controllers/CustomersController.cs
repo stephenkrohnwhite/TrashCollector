@@ -16,9 +16,24 @@ namespace TrashCollector.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Customers
-        public ActionResult Index()
+        public ActionResult Index(string option)
         {
+            //DateTime dt = DateTime.Now;
             var customers = db.Customers.Include(c => c.Address);
+            if(option == null)
+            {
+                return View(customers.ToList());
+            }
+            else if(option != null)
+            {
+                if(User.IsInRole("Employee"))
+                {
+                    string thisUserID = User.Identity.GetUserId();
+                    var currentEmployee = db.Employees.Where(c => c.UserID == thisUserID).First();
+                    return View(customers.Where(c => c.Address.ZipCode == currentEmployee.Zipcode).Where(c => c.PickUpDay.Day == option).ToList());
+                }
+                
+            }
             return View(customers.ToList());
         }
 
