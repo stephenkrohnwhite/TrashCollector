@@ -243,6 +243,14 @@
     <Compile Include="Migrations\201807190125563_test.Designer.cs">
       <DependentUpon>201807190125563_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807192310267_testing.cs" />
+    <Compile Include="Migrations\201807192310267_testing.Designer.cs">
+      <DependentUpon>201807192310267_testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807200103035_adding display functionality for zipcode.cs" />
+    <Compile Include="Migrations\201807200103035_adding display functionality for zipcode.Designer.cs">
+      <DependentUpon>201807200103035_adding display functionality for zipcode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -385,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807190125563_test.resx">
       <DependentUpon>201807190125563_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807192310267_testing.resx">
+      <DependentUpon>201807192310267_testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807200103035_adding display functionality for zipcode.resx">
+      <DependentUpon>201807200103035_adding display functionality for zipcode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,7 +25,7 @@ namespace TrashCollector.Models
         [Display(Name = "One time extra pick up")]
         [DataType(DataType.Date)]
         public DateTime? ExtraPickUp { get; set; }
-
+       
         [Display(Name = "Account Balance")]
         public Double? AccountBalance{ get; set; }
 

@@ -14,6 +14,7 @@ namespace TrashCollector.Models
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        [DisplayFormat(DataFormatString = "{0:N0}", ApplyFormatInEditMode = true)] 
         public int Zipcode { get; set; }
         public string UserID { get; set; }
         public IQueryable<Customer> PickUps { get; set; }

@@ -11,11 +11,18 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.UserAddresses)
+            @Html.DisplayNameFor(model => model.Address.AddressLine)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.UserAddresses)
+            @Html.DisplayFor(model => model.Address.AddressLine)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.ZipCode.ToString())
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.ZipCode.ToString())
         </dd>
 
         <dt>

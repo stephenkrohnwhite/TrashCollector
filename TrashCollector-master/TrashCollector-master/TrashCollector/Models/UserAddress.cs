@@ -16,7 +16,7 @@ namespace TrashCollector.Models
         public string AddressLineTwo { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        [Display(Name = "Zip Code")]
+        [DisplayFormat(DataFormatString = "{0:N0}", ApplyFormatInEditMode = true)]
         public int ZipCode { get; set; }
     
     }
