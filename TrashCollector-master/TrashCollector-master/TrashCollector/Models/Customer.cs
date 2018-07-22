@@ -33,7 +33,8 @@ namespace TrashCollector.Models
         [Display(Name = "User Address")]
         public int UserAddressKey { get; set; }
         public UserAddress Address { get; set; }
-
+        [Display(Name = "Confirmed last pickup")]
+        public bool ConfirmedPickUp { get; set; }
         public IEnumerable<UserAddress> UserAddresses { get; set; }
         public string UserID { get; set; }
         public IEnumerable<Days> DaysOfWeek { get; set; }

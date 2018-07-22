@@ -120,11 +120,15 @@ namespace TrashCollector.Controllers
         // GET: Customers/Edit/5
         public ActionResult Edit(int? id)
         {
+            var days = db.Days.ToList();
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Customer customer = db.Customers.Find(id);
+            customer = db.Customers.Include(c => c.Address).Where(c => c.UserID == customer.UserID).First();
+            customer.DaysOfWeek = days;
             if (customer == null)
             {
                 return HttpNotFound();
@@ -138,11 +142,18 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,UserName,FirstName,LastName,Phone,Email,Password,PickUpDay,ExtraPickUp,AccountBalance,UserAddressKey")] Customer customer)
+        public ActionResult Edit([Bind(Include = "UserID, FirstName,LastName,UserAddressKey,PickUpDay,ExtraPickUp,AccountBalance,ConfirmedPickUp, DayID, ExtraPickUp")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                Customer existingCustomer = db.Customers.Where(c => c.UserID == customer.UserID).First();
+                var customerDayJunction = db.Days.Where(c => c.DayID == customer.DayID).First();
+                existingCustomer.PickUpDay = customerDayJunction;
+                existingCustomer.FirstName = customer.FirstName;
+                existingCustomer.LastName = customer.LastName;
+                existingCustomer.ExtraPickUp = customer.ExtraPickUp;
+                existingCustomer.ConfirmedPickUp = customer.ConfirmedPickUp;
+                db.Entry(existingCustomer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

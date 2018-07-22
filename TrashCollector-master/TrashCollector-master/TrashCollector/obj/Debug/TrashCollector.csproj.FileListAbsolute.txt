@@ -255,3 +255,4 @@ C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\Tra
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.test.resources
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.testing.resources
 C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addingdisplayfunctionalityforzipcode.resources
+C:\Users\steph\Documents\DevCodeCamp\C#\TrashCollector\TrashCollector-master\TrashCollector-master\TrashCollector\obj\Debug\TrashCollector.Migrations.addedboolconfirmedPickUptocustomermodel.resources

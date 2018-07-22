@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201807200103035_adding display functionality for zipcode.Designer.cs">
       <DependentUpon>201807200103035_adding display functionality for zipcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807211459440_added bool confirmedPickUp to customer model.cs" />
+    <Compile Include="Migrations\201807211459440_added bool confirmedPickUp to customer model.Designer.cs">
+      <DependentUpon>201807211459440_added bool confirmedPickUp to customer model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -399,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807200103035_adding display functionality for zipcode.resx">
       <DependentUpon>201807200103035_adding display functionality for zipcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807211459440_added bool confirmedPickUp to customer model.resx">
+      <DependentUpon>201807211459440_added bool confirmedPickUp to customer model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

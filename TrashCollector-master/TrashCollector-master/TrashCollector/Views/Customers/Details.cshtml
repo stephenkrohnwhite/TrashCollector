@@ -18,11 +18,11 @@
             @Html.DisplayFor(model => model.Address.AddressLine)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Address.ZipCode.ToString())
+            @Html.DisplayNameFor(model => model.Address.ZipCode)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Address.ZipCode.ToString())
+            @Html.DisplayFor(model => model.Address.ZipCode)
         </dd>
 
         <dt>
@@ -66,17 +66,18 @@
             @Html.DisplayFor(model => model.ExtraPickUp)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AccountBalance)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountBalance)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AccountBalance)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AccountBalance)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
