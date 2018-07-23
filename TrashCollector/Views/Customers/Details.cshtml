@@ -1,0 +1,83 @@
+﻿@model TrashCollector.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.AddressLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.AddressLine)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickUpDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickUpDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraPickUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraPickUp)
+        </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountBalance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccountBalance)
+            </dd>
+
+        </dl>
+    </div>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
