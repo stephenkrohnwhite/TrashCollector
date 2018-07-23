@@ -14,6 +14,7 @@ namespace TrashCollector.Controllers
     public class CustomersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private double charge = 10;
 
         // GET: Customers
         public ActionResult Index(string option)
@@ -153,6 +154,10 @@ namespace TrashCollector.Controllers
                 existingCustomer.LastName = customer.LastName;
                 existingCustomer.ExtraPickUp = customer.ExtraPickUp;
                 existingCustomer.ConfirmedPickUp = customer.ConfirmedPickUp;
+                if(existingCustomer.ConfirmedPickUp == true && existingCustomer.AccountBalance == null)
+                {
+                    existingCustomer.AccountBalance = charge;
+                }
                 db.Entry(existingCustomer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
