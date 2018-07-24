@@ -391,3 +391,5 @@ C:\Users\steph\Documents\DevCodeCamp\ASP.net\TrashCollector-master (1)\TrashColl
 C:\Users\steph\Documents\DevCodeCamp\ASP.net\TrashCollector-master (1)\TrashCollector\obj\Debug\TrashCollector.csproj.CopyComplete
 C:\Users\steph\Documents\DevCodeCamp\ASP.net\TrashCollector-master (1)\TrashCollector\obj\Debug\TrashCollector.dll
 C:\Users\steph\Documents\DevCodeCamp\ASP.net\TrashCollector-master (1)\TrashCollector\obj\Debug\TrashCollector.pdb
+C:\Users\steph\Documents\DevCodeCamp\ASP.net\TrashCollector-master (1)\TrashCollector\obj\Debug\TrashCollector.Migrations.addingstringforpickupdayname.resources
+C:\Users\steph\Documents\DevCodeCamp\ASP.net\TrashCollector-master (1)\TrashCollector\obj\Debug\TrashCollector.Migrations.test1.resources

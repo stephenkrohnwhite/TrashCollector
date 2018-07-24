@@ -20,7 +20,7 @@ namespace TrashCollector.Controllers
         public ActionResult Index(string option)
         {
             //DateTime dt = DateTime.Now;
-             var customers = db.Customers.Include(c => c.Address);
+             var customers = db.Customers.Include(c => c.Address).Include("PickUpDay");
             if(option == null)
             {
                 return View(customers.ToList());
@@ -46,6 +46,7 @@ namespace TrashCollector.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Customer customer = db.Customers.Find(id);
+            customer = db.Customers.Include(c => c.PickUpDay).Include(c => c.Address).Where(c => c.UserID == customer.UserID).First();
             if (customer == null)
             {
                 return HttpNotFound();
@@ -80,6 +81,7 @@ namespace TrashCollector.Controllers
                 var tableAddress = db.UserAddresses.Where(c => c.AddressLine == customer.Address.AddressLine).First();
                 customer.UserAddressKey = tableAddress.UserAddressID;
                 var customerDayJunction = db.Days.Where(c => c.DayID == customer.DayID).First();
+                customer.SelectedPickUp = customerDayJunction.Day;
                 customer.PickUpDay = customerDayJunction;
                 //if (customer.ExtraDayID != null)
                 //{
@@ -128,7 +130,7 @@ namespace TrashCollector.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Customer customer = db.Customers.Find(id);
-            customer = db.Customers.Include(c => c.Address).Where(c => c.UserID == customer.UserID).First();
+            customer = db.Customers.Include(c => c.PickUpDay).Include(c => c.Address).Where(c => c.UserID == customer.UserID).First();
             customer.DaysOfWeek = days;
             if (customer == null)
             {
@@ -143,21 +145,31 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID, FirstName,LastName,UserAddressKey,PickUpDay,ExtraPickUp,AccountBalance,ConfirmedPickUp, DayID, ExtraPickUp")] Customer customer)
+        public ActionResult Edit([Bind(Include = "UserID, FirstName,LastName,SuspendStart, SuspendEnd,UserAddressKey,PickUpDay,ExtraPickUp,AccountBalance,ConfirmedPickUp, DayID, ExtraPickUp")] Customer customer)
         {
             if (ModelState.IsValid)
             {
+                DateTime dt = DateTime.Now;
                 Customer existingCustomer = db.Customers.Where(c => c.UserID == customer.UserID).First();
                 var customerDayJunction = db.Days.Where(c => c.DayID == customer.DayID).First();
+                existingCustomer.SelectedPickUp = customerDayJunction.Day;
                 existingCustomer.PickUpDay = customerDayJunction;
                 existingCustomer.FirstName = customer.FirstName;
                 existingCustomer.LastName = customer.LastName;
                 existingCustomer.ExtraPickUp = customer.ExtraPickUp;
+                existingCustomer.SuspendStart = customer.SuspendStart;
+                existingCustomer.SuspendEnd = customer.SuspendEnd;
+                if ((existingCustomer.SuspendStart != null && existingCustomer.SuspendEnd != null) &&
+                    (existingCustomer.SuspendStart < dt && existingCustomer.SuspendEnd > dt))
+                {
+                    existingCustomer.PickUpDay = db.Days.Where(d => d.Day == "Suspended").First();
+                }
                 existingCustomer.ConfirmedPickUp = customer.ConfirmedPickUp;
                 if(existingCustomer.ConfirmedPickUp == true && existingCustomer.AccountBalance == null)
                 {
                     existingCustomer.AccountBalance = charge;
                 }
+
                 db.Entry(existingCustomer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

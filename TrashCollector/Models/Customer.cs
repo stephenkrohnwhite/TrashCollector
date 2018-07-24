@@ -22,11 +22,18 @@ namespace TrashCollector.Models
         [Display(Name = "Scheduled Pick Up Day")]
         public int DayID { get; set; }
         public Days PickUpDay { get; set; }
+        public string SelectedPickUp { get; set; }
         [Display(Name = "One time extra pick up")]
         [DataType(DataType.Date)]
         public DateTime? ExtraPickUp { get; set; }
-       
+        [Display(Name = "Temporarily suspend pickup Start Date")]
+        [DataType(DataType.Date)] 
+        public DateTime? SuspendStart { get; set; }
+        [Display(Name = "Temporarily suspend pickup End Date")]
+        [DataType(DataType.Date)]
+        public DateTime? SuspendEnd { get; set; }
         [Display(Name = "Account Balance")]
+        [DataType(DataType.Currency)]
         public Double? AccountBalance{ get; set; }
 
         [ForeignKey("Address")]

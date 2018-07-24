@@ -10,7 +10,7 @@ namespace TrashCollector.Models
     {
         [Key]
         public int UserAddressID { get; set; }
-        [Display(Name = "Address Line One")]
+        [Display(Name = "Address Line 1")]
         public string AddressLine { get; set; }
         [Display(Name = "Address Line 2")]
         public string AddressLineTwo { get; set; }

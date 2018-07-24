@@ -1,10 +1,14 @@
 ﻿@model TrashCollector.Models.Customer
-
+<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+
+<style >    #map_canvas img {
+        max-width: none
+    } </style>
 
 <div>
     <h4>Customer</h4>
@@ -76,6 +80,33 @@
 
         </dl>
     </div>
+@*attempted to add google maps API but realized I would have to add Lat/Longitude properties for userAddress and generate
+    these by selecting drop down list for prepopulated zip code OR I'd have to get an API key for geocoding the addresses.
+    Did not have enough time to complete this section*@
+@*<div class="container">
+    @section scripts{
+        <section class="scripts">
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    Initialize();
+                });
+                google.maps.visualRefresh = true;
+                var myCity = 
+                var mapOptions = {
+                    zoom: 14,
+                    center: Milwaukee,
+                    mapTypeId: google.maps.MapTypeID.G_NORMAL_MAP
+                };
+                var latLng = new google.maps.LatLng(, );
+                var marker = new google.maps.Marker({
+                    poition: latLng,
+
+                })
+            </script>
+        </section>
+        }
+
+</div>*@
 
         <p>
             @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |

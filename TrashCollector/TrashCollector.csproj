@@ -255,6 +255,14 @@
     <Compile Include="Migrations\201807211459440_added bool confirmedPickUp to customer model.Designer.cs">
       <DependentUpon>201807211459440_added bool confirmedPickUp to customer model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807240016321_adding string for pickupday name.cs" />
+    <Compile Include="Migrations\201807240016321_adding string for pickupday name.Designer.cs">
+      <DependentUpon>201807240016321_adding string for pickupday name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807240141595_test1.cs" />
+    <Compile Include="Migrations\201807240141595_test1.Designer.cs">
+      <DependentUpon>201807240141595_test1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -406,6 +414,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807211459440_added bool confirmedPickUp to customer model.resx">
       <DependentUpon>201807211459440_added bool confirmedPickUp to customer model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807240016321_adding string for pickupday name.resx">
+      <DependentUpon>201807240016321_adding string for pickupday name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807240141595_test1.resx">
+      <DependentUpon>201807240141595_test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
